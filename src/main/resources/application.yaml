@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: camunda8poc
+
+camunda:
+  client:
+    zeebe:
+      grpc-address: zeebe.camunda-dev.invteamwork.com:26500
+      security:
+        plaintext: false
+    tasklist:
+      base-url: https://tasklist.camunda-dev.invteamwork.com
+      csrf:
+        enabled: false
+tasklist:
+  client:
+    profile: simple
+    defaults:
+      return-variables: true
