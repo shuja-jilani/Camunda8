@@ -4,16 +4,28 @@ spring:
 
 camunda:
   client:
+    mode: self-managed
+    auth:
+      client-id: camunda-identity
+      client-secret: FQUDcihsUPhlegiseRT1E4l52An9ecmD
+      issuer-url: https://identity.camunda-dev.invteamwork.com/auth/realms/camunda-platform
     zeebe:
-      grpc-address: zeebe.camunda-dev.invteamwork.com:26500
-      security:
-        plaintext: false
-    tasklist:
-      base-url: https://tasklist.camunda-dev.invteamwork.com
-      csrf:
-        enabled: false
+      grpc-address: http://18.220.146.24:26500
+      plaintext: true
+
+# Operate client config is a **top-level `operate:` section**
+operate:
+  client:
+    base-url: https://operate.camunda-dev.invteamwork.com
+    profile: simple
+    username: demo
+    password: demo
+
+# Tasklist client config is a **top-level `tasklist:` section**
 tasklist:
   client:
+    base-url: https://tasklist.camunda-dev.invteamwork.com
     profile: simple
-    defaults:
-      return-variables: true
+    username: demo
+    password: demo
+

@@ -23,7 +23,7 @@ public class ProcessController {
 
         ProcessInstanceEvent event = zeebeClient
                 .newCreateInstanceCommand()
-                .bpmnProcessId("leave_request_process") // <-- must match ID in BPMN model
+                .bpmnProcessId("first-bpmn") // <-- must match ID in BPMN model
                 .latestVersion()
                 .variables(variables)
                 .send()
